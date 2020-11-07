@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app-server-websocket:
+    environment:
+      MODE: dev
+      WEBSOCKETSERVERHOST: '$DOCKERHOST'
+      WEBSOCKETSERVERPORT: '5000'
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+

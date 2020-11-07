@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app-server-websocket:
+    build: ../../applications/websocketServer
+    image: es/websocket-test-app-server:1.0.0
+    container_name: app-server-websocket
+    volumes:
+      - logs:/var/log/processes
+    entrypoint: /opt/app/run_jar.sh
+    tty: true
+    hostname: websocketserver
+volumes:
+  logs: {}

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app-client-redis:
+    image: es/kafka-test-app-client:1.0.0
+    container_name: app-client-redis
+    environment:
+      PROCESS: redisQueue
+    volumes:
+     - logs:/var/log/processes
+    entrypoint: /bin/sh
+    tty: true     #network_mode: host
+  app-server-redis:
+    image: es/kafka-test-app-server:1.0.0
+    container_name: app-server-redis
+    environment:
+      PROCESS: redisQueue
+    volumes:
+      - logs:/var/log/processes
+    entrypoint: /bin/sh /opt/app/run_jar.sh
+      #entrypoint: /bin/sh
+    tty: true
+volumes:
+  logs: {}

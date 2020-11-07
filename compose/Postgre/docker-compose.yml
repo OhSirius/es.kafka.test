@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app-client-postgre-sql:
+    image: es/postgre-test-app-client:1.0.0
+    container_name: app-client-postgre-sql
+    environment:
+      PROCESS: PostgreSql
+    volumes:
+    - logs:/var/log/processes
+
+    entrypoint: /bin/sh
+
+    tty: true     #network_mode: host
+
+volumes:
+  logs: {}

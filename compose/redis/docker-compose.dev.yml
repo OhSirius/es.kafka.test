@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app-client-redis:
+    build: ../../applications/client
+    environment:
+      MODE: dev
+      REDISHOST: 'redis-server'
+      REDISPORT: '6379'
+  app-server-redis:
+    build: ../../applications/server
+    environment:
+      MODE: dev
+      REDISHOST: 'redis-server'
+      REDISPORT: '6379'

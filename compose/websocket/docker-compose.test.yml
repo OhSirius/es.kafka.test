@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app-server-websocket:
+    environment:
+      MODE: test
+      WEBSOCKETSERVERHOST: '???'
+      WEBSOCKETSERVERPORT: '1337'
+    extra_hosts:
+      - "websocket-server: ???"
+    ports:
+      - "1337:5000"

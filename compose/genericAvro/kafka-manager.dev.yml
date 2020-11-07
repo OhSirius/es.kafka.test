@@ -1,0 +1,16 @@
+---
+version: '3'
+services:
+  kafka_manager:
+    image: hlebalbau/kafka-manager:stable
+    hostname: kafka-manager
+    container_name: kafka-monitor
+    ports:
+    - "9000:9000"
+    environment:
+      ZK_HOSTS: "$DOCKERHOST:2181"
+      APPLICATION_SECRET: "random-secret"
+    command: -Dpidfile.path=/dev/null
+    #extra_hosts:
+    #- "virt235.aetp.nn:192.168.102.218"
+

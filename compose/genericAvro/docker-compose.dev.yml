@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app-client-generic-avro:
+    build: ../../applications/client
+    environment:
+      MODE: dev
+      BROCKERS: 'broker:9092'
+      SCHEMA_REGISTRY: 'http://schema-registry:8081'
+  app-server-generic-avro:
+    build: ../../applications/server
+    environment:
+      MODE: dev
+      BROCKERS: 'broker:9092'
+      SCHEMA_REGISTRY: 'http://schema-registry:8081'
+
+
+

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  redis-monitor:
+    image: krsyoung/redmon:latest
+    hostname: redis-stat
+    container_name: redis-stat-redmon
+    ports:
+    - 4567:4567
+    entrypoint: redmon -r redis://virt102.aetp.nn:6379
+    extra_hosts:
+    - "virt102.aetp.nn:192.168.103.96"
+
+volumes:
+  logs: {}

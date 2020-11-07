@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app-client-generic-avro:
+    environment:
+      MODE: prod
+      BROCKERS: '???:9092'
+      SCHEMA_REGISTRY: 'http://???:8081'
+    extra_hosts:
+    - "broker: ???"
+  app-server-generic-avro:
+    environment:
+      MODE: prod
+      BROCKERS: '???:9092'
+      SCHEMA_REGISTRY: 'http://???:8081'
+    extra_hosts:
+    - "broker: ???"
+
+

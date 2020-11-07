@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app-client-generic-avro:
+    build: ../../applications/client
+    environment:
+      MODE: dev
+      BROCKERS: '$DOCKERHOST:9092'
+      SCHEMA_REGISTRY: 'http://$DOCKERHOST:8081'
+      #BROCKERS: '$DOCKER_HOST'
+      #SCHEMA_REGISTRY: 'http://$DOCKER_HOST'
+    extra_hosts:
+    - "broker: $DOCKERHOST"
+  app-server-generic-avro:
+    build: ../../applications/server
+    environment:
+      MODE: dev
+      BROCKERS: '$DOCKERHOST:9092'
+      SCHEMA_REGISTRY: 'http://$DOCKERHOST:8081'
+    extra_hosts:
+      - "broker: $DOCKERHOST"
+
+

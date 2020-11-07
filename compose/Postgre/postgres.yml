@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  db:
+    image: postgres
+    restart: always
+    hostname: postgre-sql
+    container_name: postgre-sql
+    ports:
+    - "5432:5432"
+    expose:
+    - "5432"
+    environment:
+      POSTGRES_USER: crm_dev
+      POSTGRES_PASSWORD: crm123
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 8080:8080

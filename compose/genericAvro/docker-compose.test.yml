@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app-client-generic-avro:
+    environment:
+      MODE: test
+      BROCKERS: 'broker:9092'
+      SCHEMA_REGISTRY: 'broker:8081'
+    extra_hosts:
+    - "broker:192.168.102.218"
+    - "virt235.aetp.nn:192.168.102.218"
+  app-server-generic-avro:
+    environment:
+      MODE: test
+      BROCKERS: 'broker:9092' #127.0.0.1
+      SCHEMA_REGISTRY: 'broker:8081'
+    extra_hosts:
+    - "broker:192.168.102.218"
+    - "virt235.aetp.nn:192.168.102.218"
+
+

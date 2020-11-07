@@ -1,0 +1,21 @@
+---
+version: '3'
+services:
+  kafdrop:
+
+    image: thomsch98/kafdrop:latest
+    hostname: kafdrop
+    container_name: kafdrop-monitor
+
+    environment:
+      - "ZK_HOSTS=virt235.aetp.nn:2181"
+      - "LISTEN=9010"
+    ports:
+      - "9010:9010"
+    extra_hosts:
+    - "virt235.aetp.nn:192.168.102.218"
+
+    logging:
+      driver: journald
+
+

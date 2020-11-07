@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app-client-postgre-sql:
+    build: ../../applications/client
+    environment:
+      MODE: dev
+      POSTGRE_SERVER: 'postgre-sql:5432'
+
+
+
+

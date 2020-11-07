@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app-generic-avro:
+    image: es/kafka-test-app-client:1.0.0 #193166a7adf5 #es #confluentinc/cp-ksql-cli:5.0.0-beta30
+    container_name: app-generic-avro
+    environment:
+      MODE: test
+      PROCESS: genericAvro
+    volumes:
+      - logs:/var/log/processes
+    #entrypoint: /opt/app/run_jar.sh #/bin/sh
+    #entrypoint: ./run_jar.sh #/bin/sh
+    entrypoint: /bin/sh
+    #entrypoint: ls
+    #entrypoint:
+    #   - /bin/sh /opt/app/run_jar.sh
+    #   - /bin/sh
+    #entrypoint: /bin/sh /opt/app/run_jar.sh
+    tty: true     #network_mode: host
+
+volumes:
+  logs: {}

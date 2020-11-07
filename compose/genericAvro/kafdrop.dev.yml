@@ -1,0 +1,20 @@
+---
+version: '3'
+services:
+  kafdrop:
+
+    image: thomsch98/kafdrop:latest
+    hostname: kafdrop
+    container_name: kafdrop-monitor
+
+    environment:
+      - "ZK_HOSTS=$DOCKERHOST:2181"
+      - "LISTEN=9010"
+    ports:
+      - "9010:9010"
+
+
+    #logging:
+      #driver: journald
+
+
